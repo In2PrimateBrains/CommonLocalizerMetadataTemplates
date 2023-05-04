@@ -1,4 +1,3 @@
-**Version - 0.0.1**
 ## Dataset Description
 
 - **name** *[REQUIRED]*: Name of the dataset
@@ -114,11 +113,11 @@
 - **taskType** *[OPTIONAL]*: Reference to the taskType performed. This should match one of the defined values in tasks.tsv file.
 - **taskName** *[OPTIONAL]*: Reference to the taskName performed. This should match one of the defined values in tasks.tsv file.
 - **comment** *[OPTIONAL]*: Comment by the experimenter.
-- **totalTrialCount** *[nan]*: nan
-- **trials** *[nan]*: nan
-  - **trialID** *[nan]*: nan
-  - **trialTimeStamp** *[nan]*: nan
-  - **trialType** *[nan]*: nan
+- **totalTrialCount** *[OPTIONAL]*: Total number of trials within a session
+- **trials** *[RECOMMENDED]*: Information on individual trials
+  - **trialID** *[RECOMMENDED]*: Unique identifier associated with each trial
+  - **trialTimeStamp** *[RECOMMENDED]*: Timestamp associated with the start of the trial
+  - **trialType** *[RECOMMENDED]*: Reference to the trial type, to be described in the task description 
 
 ## Electrophysiology
 
@@ -194,7 +193,7 @@
 
 ## Behavioural
 
-- **eyeTracking** *[nan]*: nan
+- **eyeTracking** *[REQUIRED]*: Metadata describing the eye tracking recordings
   - **samplingFrequency** *[REQUIRED]*: Sampling frequency of the eye tracking data in the recording.
   - **sampleCoordinateUnit** *[REQUIRED]*: Unit of individual samples. E.g., in pixel or metric (mm, cm) units&#10;
   - **sampleCoordinateSystem** *[REQUIRED]*: For classical screen-based eye tracking like in the CL experiments, it will be “gaze-on-screen”, but “eye-in-head” or “gaze-in-world” are also possible coordinate systems (e.g. in VR)&#10;&#10;
@@ -203,14 +202,14 @@
   - **screenResolution** *[REQUIRED]*: Screen resolution (default in pixel) (for example [1920, 1200] for a screen of 1920-width by 1080-height pixels).
   - **screenDistance** *[REQUIRED]*: Distance between the participant&apos;s eye and the screen. 
   - **screenRefreshRate** *[RECOMMENDED]*: Refresh rate of the screen (equivalent to frames per second, "FPS", default unit would be Hertz).
-  - **dataAcquisitionSystem** *[RECOMMENDED]*: nan
+  - **dataAcquisitionSystem** *[RECOMMENDED]*: Metadata describing the DAQ used for eye tracking recordings
     - **institutionName** *[RECOMMENDED]*: The name of the institution in charge of the equipment that produced the eye-tacking data. 
     - **institutionAddress** *[RECOMMENDED]*: The address of the institution in charge of the equipment that produced the eye-tacking data. 
     - **manufacturer** *[RECOMMENDED]*: Manufacturer of the eye-tracking system (e.g. "SR-Research", "Tobii", "SMI", “Gazepoint”, “Pupil Labs”, “Custom built”, ... , "Other") 
     - **manufacturerModelName** *[RECOMMENDED]*: Manufacturer’s designation of the eye-tracker model (e.g. "Eye-link 1000")
     - **softwareVersion** *[RECOMMENDED]*: Manufacturer’s designation of the data acquisition software.
     - **deviceSerialNumber** *[RECOMMENDED]*: The serial number of the equipment that produced the data. A pseudonym can also be used to prevent the equipment from being identifiable, as long as each pseudonym is unique within the dataset.
-  - **calibrationInformation** *[RECOMMENDED]*: nan
+  - **calibrationInformation** *[RECOMMENDED]*: Metadata describing the calibration used associated with the eye-tracking recordings
     - **calibrationType** *[RECOMMENDED]*: Description of the calibration procedure. For example the "H3" for horizontal calibration with 3 positions or "HV9" for horizontal and vertical calibration with 9 positions, or one point calibration.
     - **calibrationUnit** *[RECOMMENDED]*: Unit of "calibrationPosition". Must be one of: "pixel", "mm", "cm".
     - **calibrationPosition** *[RECOMMENDED]*: Provide a list of X/Y coordinates in the calibrationUnit. For example, using 5 positions calibration presented on an HD screen, it could be [[960,50],[960,540],[960,1030],[50,540],[1870,540]].
@@ -219,55 +218,52 @@
     - **calibrationErrorUnit** *[RECOMMENDED]*: Unit used for calibration error. Default is visual degrees
     - **recordedEye** *[RECOMMENDED]*: Specification for which eye was tracked.Must be one of: "left", "right", "both".
   - **eyeCameraSettings** *[RECOMMENDED]*: A field to store any settings that influence the resolution and quality of the eye imagery. Autowhitebalance? Changes in sharpness?
-  - **featureDetectionSettings** *[RECOMMENDED]*: nan
-  - **gazeMappingSettings** *[RECOMMENDED]*: nan
+  - **featureDetectionSettings** *[RECOMMENDED]*: TBD – if needed or not
+  - **gazeMappingSettings** *[RECOMMENDED]*: TBD – if needed or not
   - **rawDataFilters** *[RECOMMENDED]*: Filter settings applied to eye-movement raw data. For example Eyelink trackers typically automatically filter the raw data.
   - **screenAOIDefinition** *[RECOMMENDED]*: A description of the shape of the Screen AOIs and what coordinates are used. ["square", ["x_start", "x_stop", "y_start", "y_stop"]] Other options: "custom"/"circle"/"triangle", [["x", "y"], ["x", "y"], ["x", "y"], and so on.] - Not applicable for CL protocols defined so far.
   - **pupilFitMethod** *[RECOMMENDED]*: The method employed for fitting the pupil, for example "centre-of-mass" or "ellipse". If "centre-of-mass" or "ellipse" method is used, it is RECOMMENDED to use these exact labels.
   - **startTime** *[RECOMMENDED]*: Eye-tracking timestamp corresponding to the onset (start) of the run.
   - **stopTime** *[RECOMMENDED]*: Eye-tracking timestamp corresponding to the offset (stop) of the run.
-- **videoRecording** *[REQUIRED]*: nan
+- **videoRecording** *[REQUIRED]*: Metadata describing the video recording data
   - **videoFileName** *[REQUIRED]*: The name of the video file.
   - **videoFileFormat** *[REQUIRED]*: The format of the video file, such as, "MP4", "AVI", "MOV", etc.
   - **videoDuration** *[RECOMMENDED]*: The duration of the video file (default in seconds)
-  - **videoFrameRate** *[nan]*: The frame rate of the video file, in frames per second.
-  - **videoCodec** *[nan]*: The video codec used to compress the video file, for instance, "H.264", "MPEG-4", "VP9", etc.
-  - **videoBitrate** *[nan]*: The bit rate of the video file, in bits per second.
-  - **videoColorSpace** *[nan]*: The color space used in the video file, for instance, "RGB", "YUV", "CMYK", etc.
-  - **videoChromaSubsampling** *[nan]*: The chroma subsampling used in the video file, for instance, "4:2:0", "4:2:2", "4:4:4", etc.
-  - **videoResolution** *[nan]*: The resolution of the video file, in pixels and format "widthxheight"
-  - **videoAspectRatio** *[nan]*: The aspect ratio of the video file, in the format, width:height
-  - **videoBitDepth** *[nan]*: The bit depth of the video file, in bits per pixel.
-  - **videoBitRateMode** *[nan]*: The bitrate mode used in the video file, for instance, "constant", "variable", etc.
-  - **videoSize** *[nan]*: The size of the video file, default in bytes.
-  - **videoSource** *[nan]*: The source of the video file, for instance, "Camera [name]", "Screen capture", etc.
-  - **videoCreationDate** *[nan]*: Date of when the video file was created.
-- **behaviouralCodes** *[nan]*: nan
-  - **codeNumber** *[nan]*: The behavioural code number used during the experimental run.
-  - **codeName** *[nan]*: The behavioural code name, corresponding to the code number used during the experimental run.
-  - **codeDescription** *[nan]*: A short human-readable description of the behavioral code.
+  - **videoFrameRate** *[RECOMMENDED]*: The frame rate of the video file, in frames per second.
+  - **videoBitrate** *[RECOMMENDED]*: The bit rate of the video file, in bits per second.
+  - **videoColorSpace** *[RECOMMENDED]*: The color space used in the video file, for instance, "RGB", "YUV", "CMYK", etc.
+  - **videoResolution** *[RECOMMENDED]*: The resolution of the video file, in pixels and format "widthxheight"
+  - **videoAspectRatio** *[RECOMMENDED]*: The aspect ratio of the video file, in the format, width:height
+  - **videoBitDepth** *[OPTIONAL]*: The bit depth of the video file, in bits per pixel.
+  - **videoSize** *[OPTIONAL]*: The size of the video file, default in bytes.
+  - **videoSource** *[OPTIONAL]*: The source of the video file, for instance, "Camera [name]", "Screen capture", etc.
+  - **videoCreationDate** *[OPTIONAL]*: Date of when the video file was created.
+- **behaviouralCodes** *[REQUIRED]*: Metadata describing the behavioural codes associated with the experimental data
+  - **codeNumber** *[REQUIRED]*: The behavioural code number used during the experimental run.
+  - **codeName** *[REQUIRED]*: The behavioural code name, corresponding to the code number used during the experimental run.
+  - **codeDescription** *[REQUIRED]*: A short human-readable description of the behavioral code.
 
 ## Physiological
 
-- **cardiovascular** *[nan]*: nan
-  - **heartRate** *[REQUIRED]*: Measurement for heart rate.
-  - **heartPulseRhythm** *[REQUIRED]*: The rhythm and force of the heart&apos;s contractions, for instance, "regular", "irregular", "weak", "strong", etc.
-  - **bloodPressur** *[REQUIRED]*: Mt for blood pressure, for instance, "millimeters of mercury"
-  - **cardiacOuput** *[REQUIRED]*: MeasuRement cardiac output, for instance in "liters per minute"
-  - **ecgSamplingRate** *[REQUIRED]*: Sampling rate for the ECG in Hz
-- **respiratory** *[nan]*: nan
-  - **respiratoryRate** *[REQUIRED]*: Measurement of respiratory rate, for instance in "breaths per minute"
-  - **tidalVolume** *[REQUIRED]*: Measurement of tidal volume, for instance in "milliliters"
-  - **minuteVentilation** *[REQUIRED]*: Measurement of minute ventilation, for instance in "liters per minute"
-  - **capnographySamplingRate** *[REQUIRED]*: Sampling rate used for capnography in Hz
-- **temperature** *[nan]*: nan
-  - **coreBodyTemp** *[REQUIRED]*: Measurement  of temperature of the body&apos;s internal organs.
-  - **skinTemp** *[REQUIRED]*: Measurement  of  temperature of the skin.
-- **metabolic** *[nan]*: nan
-  - **oxygenConsumption** *[REQUIRED]*: Measurement  of oxygen consumption, for instance in "milliliters per minute"
-  - **carbonDIoxideProduction** *[REQUIRED]*: Measurement  of  carbon dioxide production, for instance in "milliliters per minute"
-  - **bloodGlucose** *[REQUIRED]*: Measurement  of  blood glucose, for instance in "millimoles per liter"
-- **environmentalConditions** *[nan]*: nan
-- **sensorInformation** *[nan]*: nan
-- **deviceInformation** *[nan]*: nan
+- **cardiovascular** *[RECOMMENDED]*: Metadata describing the cardiovascular recordings
+  - **heartRate** *[RECOMMENDED]*: Measurement for heart rate.
+  - **heartPulseRhythm** *[RECOMMENDED]*: The rhythm and force of the heart&apos;s contractions, for instance, "regular", "irregular", "weak", "strong", etc.
+  - **bloodPressur** *[RECOMMENDED]*: Mt for blood pressure, for instance, "millimeters of mercury"
+  - **cardiacOuput** *[RECOMMENDED]*: MeasuRement cardiac output, for instance in "liters per minute"
+  - **ecgSamplingRate** *[RECOMMENDED]*: Sampling rate for the ECG in Hz
+- **respiratory** *[RECOMMENDED]*: Metadata describing the respiratory recordings
+  - **respiratoryRate** *[RECOMMENDED]*: Measurement of respiratory rate, for instance in "breaths per minute"
+  - **tidalVolume** *[RECOMMENDED]*: Measurement of tidal volume, for instance in "milliliters"
+  - **minuteVentilation** *[RECOMMENDED]*: Measurement of minute ventilation, for instance in "liters per minute"
+  - **capnographySamplingRate** *[RECOMMENDED]*: Sampling rate used for capnography in Hz
+- **temperature** *[RECOMMENDED]*: Metadata describing temperature recordings
+  - **coreBodyTemp** *[RECOMMENDED]*: Measurement  of temperature of the body&apos;s internal organs.
+  - **skinTemp** *[RECOMMENDED]*: Measurement  of  temperature of the skin.
+- **metabolic** *[RECOMMENDED]*: Metadata describing metabolic recordings
+  - **oxygenConsumption** *[RECOMMENDED]*: Measurement  of oxygen consumption, for instance in "milliliters per minute"
+  - **carbonDIoxideProduction** *[RECOMMENDED]*: Measurement  of  carbon dioxide production, for instance in "milliliters per minute"
+  - **bloodGlucose** *[RECOMMENDED]*: Measurement  of  blood glucose, for instance in "millimoles per liter"
+- **environmentalConditions** *[RECOMMENDED]*: TBD
+- **sensorInformation** *[RECOMMENDED]*: TBD
+- **deviceInformation** *[RECOMMENDED]*: TBD
 
