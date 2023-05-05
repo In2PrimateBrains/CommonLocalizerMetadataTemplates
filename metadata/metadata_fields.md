@@ -1,7 +1,18 @@
-## Dataset Description
+# Common localizer metadata standard
+
+## Version: 0.0.1
+
+This document specifies the metadata to be collected with the In2PrimateBrains Common Localizer experiments. 
+The metadata specification is an ongoing collaborative endeavor, and we greatly appreciate input from PIs, ESRs, and other participating members to help refine it. 
+
+The initial specification is based on the Brain Imaging Data Structure (BIDS)[https://bids-specification.readthedocs.io/en/stable/], BIDS Extension Proposal 032 (BEP032)[https://bids.neuroimaging.io/bep032], BIDS Extension Proposal 020 (BEP020)[https://github.com/bids-standard/bids-specification/pull/1128], BIDS Extension Proposal 029 (BEP029)[https://github.com/bids-standard/bids-specification/pull/981] and openMINDS metadata models[https://openminds.ebrains.eu/v2/].
+
+
+
+## 1. Dataset Description
 
 - **name** *[REQUIRED]*: Name of the dataset
-- **datasetType** *[RECOMMENDED]*: The interpretation of the dataset. For backwards compatibility, the default value is "raw". 
+- **datasetType** *[RECOMMENDED]*: The type(s) of data present in the dataset
   - Example: raw
   - Allowed Values: raw, derived
 - **license** *[RECOMMENDED]*: The license for the dataset. The use of license name abbreviations is RECOMMENDED for specifying a license. The corresponding full license text MAY be specified in an additional LICENSE file.
@@ -47,7 +58,7 @@
   - **neuralActivity** *[OPTIONAL]*: List of recorded modalities of neural data
   - **behaviour** *[OPTIONAL]*: List of recorded modalities of behavioral data
 
-## Subject
+## 2. Subject
 
 - **subjectID** *[REQUIRED]*: Unique identifier for the subject.
 - **species** *[REQUIRED]*: Binomial species name from NCBI taxonomy (https://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/)
@@ -89,7 +100,7 @@
     - **arraySerialNumber** *[RECOMMENDED]*: Serial number of all the arrays.
     - **connectorSerialNumber** *[RECOMMENDED]*: Serial number of the connector.
 
-## Tasks
+## 3. Tasks
 
 - **taskType** *[REQUIRED]*: Human-readable abbreviated task type
   - Example: video
@@ -100,7 +111,7 @@
 - **configFile** *[RECOMMENDED]*: Relative or absolute path to the configuration file used for specified task.
 - **comment** *[OPTIONAL]*: Remarks on the task being described
 
-## Session
+## 4. Session
 
 - **sessionID** *[REQUIRED]*: A session is defined as the continuous time block between when the first data point is recorded after the subject is brought in and when the subject leaves. The sessionID is a unique identifier which should match the “ses-<label>” used in file naming system.
 - **sessionDate** *[OPTIONAL]*: Date and time of start of session  YYYY-MM-DDT00:00:00 format (https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations)
@@ -119,7 +130,7 @@
   - **trialTimeStamp** *[RECOMMENDED]*: Timestamp associated with the start of the trial
   - **trialType** *[RECOMMENDED]*: Reference to the trial type, to be described in the task description 
 
-## Electrophysiology
+## 5. Electrophysiology
 
 - **probe** *[REQUIRED]*: Probes are physical devices used for recording the electrophysiological data. They can be permanently implanted (chronic recordings) or inserted just for the recording (acute recordings).&#10;
   - **probeID** *[REQUIRED]*: Unique identifier for each probe that is referenced in the dataset
@@ -191,7 +202,7 @@
   - **creator** *[OPTIONAL]*: Name of the person who set up the system&#10;
   - **maintainer** *[OPTIONAL]*: Name of the person who maintains the system
 
-## Behavioural
+## 6. Behavioural
 
 - **eyeTracking** *[REQUIRED]*: Metadata describing the eye tracking recordings
   - **samplingFrequency** *[REQUIRED]*: Sampling frequency of the eye tracking data in the recording.
@@ -243,7 +254,7 @@
   - **codeName** *[REQUIRED]*: The behavioural code name, corresponding to the code number used during the experimental run.
   - **codeDescription** *[REQUIRED]*: A short human-readable description of the behavioral code.
 
-## Physiological
+## 7. Physiological
 
 - **cardiovascular** *[RECOMMENDED]*: Metadata describing the cardiovascular recordings
   - **heartRate** *[RECOMMENDED]*: Measurement for heart rate.
