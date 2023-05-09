@@ -5,8 +5,9 @@
 This document specifies the metadata to be collected with the In2PrimateBrains Common Localizer experiments. 
 The metadata specification is an ongoing collaborative endeavor, and we greatly appreciate input from PIs, ESRs, and other participating members to help refine it. 
 
-The initial specification is based on the Brain Imaging Data Structure (BIDS)[https://bids-specification.readthedocs.io/en/stable/], BIDS Extension Proposal 032 (BEP032)[https://bids.neuroimaging.io/bep032], BIDS Extension Proposal 020 (BEP020)[https://github.com/bids-standard/bids-specification/pull/1128], BIDS Extension Proposal 029 (BEP029)[https://github.com/bids-standard/bids-specification/pull/981] and openMINDS metadata models[https://openminds.ebrains.eu/v2/].
+The initial specification is based on the [Brain Imaging Data Structure (BIDS)](https://bids-specification.readthedocs.io/en/stable/), [BIDS Extension Proposal 032 (BEP032)](https://bids.neuroimaging.io/bep032), [BIDS Extension Proposal 020 (BEP020)](https://github.com/bids-standard/bids-specification/pull/1128), [BIDS Extension Proposal 029 (BEP029)](https://github.com/bids-standard/bids-specification/pull/981) and [openMINDS metadata models](https://openminds.ebrains.eu/v2/).
 
+NOTE: We used the following keywords below: "REQUIRED", "RECOMMENDED", and "OPTIONAL". They are to be interpreted as described in [RFC2119](https://www.ietf.org/rfc/rfc2119.txt).
 
 
 ## 1. Dataset Description
