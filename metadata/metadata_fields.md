@@ -9,6 +9,8 @@ The initial specification is based on the [Brain Imaging Data Structure (BIDS)](
 
 NOTE: We used the following keywords below: "REQUIRED", "RECOMMENDED", and "OPTIONAL". They are to be interpreted as described in [RFC2119](https://www.ietf.org/rfc/rfc2119.txt).
 
+We welcome suggestions on the specification, such as the addition of new fields to better describe the common localizer experiments, modifications to the existing requirement levels, or any other general feedback. 
+
 
 ## 1. Dataset Description
 
