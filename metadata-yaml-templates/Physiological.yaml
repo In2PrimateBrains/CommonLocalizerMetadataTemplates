@@ -1,0 +1,140 @@
+Document:
+  id: 884fe241-e3e3-44bd-a8e4-e1d08e532206
+  sections:
+  - id: 19f5b71b-ec17-41bc-9695-d809c440ef88
+    name: Physiological
+    properties:
+    - definition: Metadata describing the cardiovascular recordings
+      id: 8fa22624-d1da-4f14-912d-2e4e30f58df2
+      name: cardiovascular
+      type: string
+      value: []
+    - definition: TBD
+      id: 950a88d1-eb6a-46c0-9408-921b1a2382c4
+      name: deviceInformation
+      type: string
+      value: []
+    - definition: TBD
+      id: aa00d17e-79e2-474a-83a6-5c08a97dfbbd
+      name: environmentalConditions
+      type: string
+      value: []
+    - definition: Metadata describing metabolic recordings
+      id: 66282d15-f0bf-4c23-81df-04866f7d35e4
+      name: metabolic
+      type: string
+      value: []
+    - definition: Metadata describing the respiratory recordings
+      id: 7d8e4a49-911d-4c8b-9969-6a5619bc05e5
+      name: respiratory
+      type: string
+      value: []
+    - definition: TBD
+      id: 8ada96e4-5273-4751-8f66-d0f3f155392b
+      name: sensorInformation
+      type: string
+      value: []
+    - definition: Metadata describing temperature recordings
+      id: 26cab2eb-4bb6-4480-a39b-ef2e9cf42e1d
+      name: temperature
+      type: string
+      value: []
+    sections:
+    - id: 02698086-fedb-419a-8502-d6bee6699630
+      name: cardiovascular
+      properties:
+      - definition: Mt for blood pressure, for instance, "millimeters of mercury"
+        id: 5925b213-d3f5-45c0-9d34-e5cd23ce2708
+        name: bloodPressur
+        type: string
+        value: []
+      - definition: MeasuRement cardiac output, for instance in "liters per minute"
+        id: 942682b3-43eb-46ff-a555-519eadd55211
+        name: cardiacOuput
+        type: string
+        value: []
+      - definition: Sampling rate for the ECG in Hz
+        id: ee5a808c-7b25-4d4b-8d04-344779f07ef1
+        name: ecgSamplingRate
+        type: float
+        value: []
+      - definition: The rhythm and force of the heart&apos;s contractions, for instance,
+          "regular", "irregular", "weak", "strong", etc.
+        id: b05c1fc7-4925-4a5c-afe1-9ac7c54d196a
+        name: heartPulseRhythm
+        type: string
+        value: []
+      - definition: Measurement for heart rate.
+        id: 9357488c-a070-49de-9878-3782b97fceed
+        name: heartRate
+        type: string
+        value: []
+      sections: []
+      type: n.s.
+    - id: 80916c79-c006-4581-b956-851a897a533d
+      name: metabolic
+      properties:
+      - definition: Measurement  of  blood glucose, for instance in "millimoles per
+          liter"
+        id: d997675f-76d1-47d2-b587-c8183de935e9
+        name: bloodGlucose
+        type: string
+        value: []
+      - definition: Measurement  of  carbon dioxide production, for instance in "milliliters
+          per minute"
+        id: 1e9e5322-11fc-46cd-ba90-23d2a59a6435
+        name: carbonDIoxideProduction
+        type: string
+        value: []
+      - definition: Measurement  of oxygen consumption, for instance in "milliliters
+          per minute"
+        id: 00c4e250-f05b-4a95-8cd2-d85f34035036
+        name: oxygenConsumption
+        type: string
+        value: []
+      sections: []
+      type: n.s.
+    - id: de2a8d67-c72f-4200-925b-c7d1a674010d
+      name: respiratory
+      properties:
+      - definition: Sampling rate used for capnography in Hz
+        id: 2c46542d-e5db-4631-a219-1040e960b178
+        name: capnographySamplingRate
+        type: float
+        value: []
+      - definition: Measurement of minute ventilation, for instance in "liters per
+          minute"
+        id: 27da2d63-8076-40d5-aae2-0549d6495d65
+        name: minuteVentilation
+        type: string
+        value: []
+      - definition: Measurement of respiratory rate, for instance in "breaths per
+          minute"
+        id: ae229f4a-6da9-497f-85b3-5eb92feb2048
+        name: respiratoryRate
+        type: string
+        value: []
+      - definition: Measurement of tidal volume, for instance in "milliliters"
+        id: 709d711d-c55a-48a8-a03a-15eedc466501
+        name: tidalVolume
+        type: string
+        value: []
+      sections: []
+      type: n.s.
+    - id: 0013ccab-d9ba-40c9-8ccd-9e570da64ef6
+      name: temperature
+      properties:
+      - definition: Measurement  of temperature of the body&apos;s internal organs.
+        id: 7409041e-44d4-41a3-a02d-17ec291c1c7b
+        name: coreBodyTemp
+        type: string
+        value: []
+      - definition: Measurement  of  temperature of the skin.
+        id: dc240664-1008-4246-99c7-ffd0c0ed68b6
+        name: skinTemp
+        type: string
+        value: []
+      sections: []
+      type: n.s.
+    type: n.s.
+odml-version: '1.1'
