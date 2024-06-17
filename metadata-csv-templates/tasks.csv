@@ -1,5 +1,0 @@
-Section,PropertyName,Value,DataType,DataUnit,RequirementLevel,Description,Example,AllowedValues,Comments,Reference
-/tasks,comment,,,,REQUIRED,Human-readable abbreviated task type,,,,
-,configFile,,,,REQUIRED,Human-readable abbreviated task name,,,,
-,taskName,,,,RECOMMENDED,Relative or absolute path to the configuration file used for specified task.,,,,
-,taskType,,,,OPTIONAL,Remarks on the task being described,,,,

@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "in2pb-metadata-templates"
+version = "0.1.0"
+description = ""
+authors = ["Reema Gupta <reema.gupta@lmu.de>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+odml = "^1.5.4"
+requests = "^2.31.0"
+python-dotenv = "^1.0.1"
+odmltables = "^1.0.1"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
