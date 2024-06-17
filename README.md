@@ -2,7 +2,7 @@
 
 NOTE: This repository is a work in progress.
 
-The recommended way to view this repository and templates is through the hosted GitHub pages.
+The recommended way to view this repository and templates is through the hosted GitHub pages at https://in2primatebrains.github.io/CommonLocalizerMetadataTemplates/
 
 ## Common Localizer Protocols
 
